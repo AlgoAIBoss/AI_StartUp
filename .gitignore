@@ -1,0 +1,4 @@
+VIRTUAL/
+__pycache__/
+db.sqlite3
+ACCOUNT
