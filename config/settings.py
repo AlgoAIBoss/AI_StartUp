@@ -67,8 +67,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd6t256tr57aibc',
+        'USER': 'bmsuzfchlauyms',
+        'PASSWORD': 'f448a051675aed2e96590ec07cfb59c6bd187c78f02d7a976e4311d1a16d720c',
+        'HOST': 'ec2-44-193-111-218.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -110,11 +114,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))] # new
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles')) # new
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]  # new
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))  # new
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 MEDIA_URL = '/media/'
-STATICFILES_STORAGE ='whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
@@ -125,5 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home' 
+LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
